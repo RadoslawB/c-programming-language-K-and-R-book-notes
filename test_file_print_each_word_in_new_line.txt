@@ -1,5 +1,0 @@
-Word first second
-
-
-
-Too many blank             lines

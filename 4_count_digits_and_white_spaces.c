@@ -1,0 +1,29 @@
+#include "stdio.h"
+
+
+int main() {
+    int c, i, nwhite, nother;
+    int ndigit[10];
+    int digitIndex;
+    nwhite = nother = 0;
+    for (i = 0; i < 10; ++i) {
+        ndigit[i] = 0;
+    }
+
+
+    while ((c = getchar()) != EOF) {
+        if (c >= '0' && c <= '9') {
+            digitIndex = c - '0';
+            ++ndigit[digitIndex];
+        } else if (c == ' ' || c == '\n' || c == '\t')
+            ++nwhite;
+        else
+            ++nother;
+    }
+
+    printf("Digits count:");
+    for (i = 0; i < 10; ++i)
+        printf(" %d", ndigit[i]);
+
+    printf("\nwhite spaces: %d, other %d\n", nwhite, nother);
+}
